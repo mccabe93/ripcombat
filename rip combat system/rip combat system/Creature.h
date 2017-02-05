@@ -12,7 +12,7 @@ namespace rip
 		// filename for saving and loading statuses
 		std::string filename;
 		// internal id for the creature. differentiates several generic or just unnamed creatures
-		float	id;
+		int		id;
 		void	load(),
 				saveStatus();
 
@@ -55,7 +55,7 @@ namespace rip
 				skillDodge,
 				skillStrength;
 
-		std::list<Entity*>	inventory;
+		std::list<Object*>	inventory;
 		// the "root" limbs of the body
 		std::list<Limb*>	body;
 		// unconscious, stunned, panicking, insanity, disabled, disabled(suffocating)
@@ -79,5 +79,6 @@ namespace rip
 		void toggleDisabled();				// a general catchall for other disabling effects (paralysis, mind control, etc.)
 		void toggleDisabledCantBreathe();	// an additional disabling effect for suffocating disabling effects (frozen, force choke, etc.)
 
+		Creature();
 	};
 }
